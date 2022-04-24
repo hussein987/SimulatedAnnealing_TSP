@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 class SimulatedAnnealing():
 
-    def __init__(self, cities, distances, cooling_ratio=0.999, temperature=None):
+    def __init__(self, cities, distances, cooling_ratio=0.995, temperature=None):
 
         self.cities = cities
         self.num_cities = len(cities)

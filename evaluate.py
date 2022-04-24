@@ -12,7 +12,7 @@ if __name__ == "__main__":
     
     cities = pd.read_csv('top_populated_cities.csv')
     distances = get_distances(cities)
-    sa_tsp = SimulatedAnnealing(cities, distances, temperature=300000)
+    sa_tsp = SimulatedAnnealing(cities, distances, temperature=30000)
     sa_tsp.run()
     visualization.plot_all(sa_tsp.costs, sa_tsp.cities, sa_tsp.best_solution, sa_tsp.temps, sa_tsp.accept_probs)
 

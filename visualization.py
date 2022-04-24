@@ -68,18 +68,18 @@ def plot_all(costs_list, cities, path, temps, alphas):
     ax4 = fig.add_subplot(gs[2, 2])  # temperature
 
     ax1.set_title('Map', fontsize=15)
-    ax2.set_title('Fitness function', fontsize=15)
-    ax3.set_title('acceptance probability', fontsize=15)
+    ax2.set_title('Normalized fitness function', fontsize=15)
+    ax3.set_title('acceptance probability (alpha)', fontsize=15)
     ax4.set_title('temperature', fontsize=15)
 
     #####################################################################################
     # plot the cost function
     #####################################################################################
-    costs_list = np.array(costs_list)
+    costs_list = np.array(costs_list[2:])
     # ax2.plot(costs_list / costs_list.max())
     from scipy.ndimage.filters import gaussian_filter1d
     x = [i for i in range(len(costs_list))]
-    ysmoothed = gaussian_filter1d(costs_list, sigma=100)
+    ysmoothed = gaussian_filter1d(costs_list / costs_list.max(), sigma=10)
     ax2.plot(x, ysmoothed)
     
 
