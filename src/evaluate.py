@@ -1,5 +1,5 @@
 from turtle import distance
-from SA_TSP import SimulatedAnnealing
+from src.SA_TSP import SimulatedAnnealing
 import pandas as pd
 import numpy as np
 from utils import *
